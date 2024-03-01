@@ -3,7 +3,12 @@ import type { MetaFunction } from "@vercel/remix";
 import { Suspense } from "react";
 
 export const meta: MetaFunction = () => {
-  return [{ title: "Easy, Breezy, Remix-Vite-Vercel Girl" }];
+  return [
+    { title: "Easy, Breezy, Remix-Vite-Vercel Girl" },
+    { property: "og:title", content: "Easy, Breezy, Remix-Vite-Vercel Girl" },
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: "Easy, Breezy, Remix-Vite-Vercel Girl" },
+  ];
 };
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
