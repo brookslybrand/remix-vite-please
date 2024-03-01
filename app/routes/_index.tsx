@@ -1,12 +1,9 @@
-import { Await, defer, useLoaderData } from "@remix-run/react";
+import { Await, Link, defer, useLoaderData } from "@remix-run/react";
 import type { MetaFunction } from "@vercel/remix";
 import { Suspense } from "react";
 
 export const meta: MetaFunction = () => {
-  return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
-  ];
+  return [{ title: "Easy, Breezy, Remix-Vite-Vercel Girl" }];
 };
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -27,6 +24,8 @@ export default function Index() {
       <Suspense fallback="Loading...">
         <Await resolve={message2}>{(message2) => <p>{message2}</p>}</Await>
       </Suspense>
+      <br />
+      <Link to="/edge">Take it to the edge</Link>
     </div>
   );
 }
